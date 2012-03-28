@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  resume_submission_date: 2012-03-25
+  notes: MyText
+
+two:
+  name: MyString
+  resume_submission_date: 2012-03-25
+  notes: MyText

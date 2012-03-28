@@ -1,0 +1,27 @@
+<h1>Listing recruiters</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Resume submission date</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recruiters.each do |recruiter| %>
+  <tr>
+    <td><%= recruiter.name %></td>
+    <td><%= recruiter.resume_submission_date %></td>
+    <td><%= recruiter.notes %></td>
+    <td><%= link_to 'Show', recruiter %></td>
+    <td><%= link_to 'Edit', edit_recruiter_path(recruiter) %></td>
+    <td><%= link_to 'Destroy', recruiter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Recruiter', new_recruiter_path %>

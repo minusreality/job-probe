@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Site name:</b>
+  <%= @ad.site_name %>
+</p>
+
+<p>
+  <b>Site url:</b>
+  <%= @ad.site_url %>
+</p>
+
+<p>
+  <b>Date posted:</b>
+  <%= @ad.date_posted %>
+</p>
+
+<p>
+  <b>Last updated:</b>
+  <%= @ad.last_updated %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @ad.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>

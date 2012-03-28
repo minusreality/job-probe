@@ -1,0 +1,30 @@
+<h2>Listing jobs</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>Company name</th>
+    <th>Application date</th>
+    <th>Compensation</th>
+    <th>Recruiter</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.company_name %></td>
+    <td><%= job.application_date %></td>
+    <td><%= job.compensation %></td>
+    <td><%= job.recruiter_id %></td>
+    <td><%= job.notes %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+		<td><%= button_to t('general.delete'), job, :method => :delete, :confirm => t('question.confirm_delete') %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Job', new_job_path %>

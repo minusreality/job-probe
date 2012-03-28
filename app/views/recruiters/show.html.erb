@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @recruiter.name %>
+</p>
+
+<p>
+  <b>Resume submission date:</b>
+  <%= @recruiter.resume_submission_date %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @recruiter.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_recruiter_path(@recruiter) %> |
+<%= link_to 'Back', recruiters_path %>
