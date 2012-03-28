@@ -9,7 +9,6 @@
     <th>Notes</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @jobs.each do |job| %>
@@ -17,16 +16,23 @@
     <td><%= job.company_name %></td>
     <td><%= job.application_date %></td>
     <td><%= job.compensation %></td>
-    <td><%= job.recruiter_id %></td>
+    <td><%= job.recruiter.name unless job.recruiter.nil? %></td>
     <td><%= job.notes %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+		<% if can? :update, job %>
+    	<td><%= link_to 'Edit', edit_job_path(job) %></td>
+		<% end %>
+		<% if can? :destroy, job %>
 		<td><%= button_to t('general.delete'), job, :method => :delete, :confirm => t('question.confirm_delete') %></td>
+		<% end %>
+		
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<div class="clearfix">
-	<%= link_to 'New Job', new_job_path %>
-</div>
+<% if can? :create, Job %>
+	<div class="clearfix">
+		<%= link_to 'New Job', new_job_path %>
+	</div>
+<% end %>

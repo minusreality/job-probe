@@ -38,6 +38,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    cancan (1.6.7)
     chunky_png (1.2.5)
     compass (0.12.1)
       chunky_png (~> 1.2)
@@ -118,6 +119,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancan
   compass-rails
   compass_twitter_bootstrap!
   devise

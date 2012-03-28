@@ -1,7 +1,7 @@
 <% title 'Job Probe' -%>
 
 	<ul class="nav nav-pills nav-stacked">
-<% if user_signed_in? -%>
+<% if user_signed_in? || admin_signed_in? -%>
 		<li><%= link_to 'Jobs', jobs_path %></li>
 		<li><%= link_to 'Recruiters', recruiters_path %></li>
 		<li><%= link_to 'Ads', ads_path %></li>

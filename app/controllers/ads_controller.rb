@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_any!
   layout 'entity'
   
   # GET /ads

@@ -8,4 +8,10 @@ class User < ActiveRecord::Base
   has_many :ads, :dependent => :destroy
   has_many :jobs, :dependent => :destroy
   has_many :recruiters, :dependent => :destroy
+  
+  ROLES = %w[admin user]
+  
+  def admin?
+    false
+  end
 end
