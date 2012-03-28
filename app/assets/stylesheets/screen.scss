@@ -63,15 +63,10 @@ html[xmlns] .clearfix {
 
 #{$namespace} .main-box {
 	text-align: center;
-	border: solid red 1px;
 }
 
 #{$namespace} #flash_notice {
 	margin-bottom: $element-vspacing;
-}
-
-#{$namespace} h2 {
-	width: $general-width;
 }
 
 #{$namespace} a {
@@ -97,18 +92,28 @@ html[xmlns] .clearfix {
 	font-size: 20px;
 }
 
+#{$namespace} #entity_menu {
+}
+
+
 #{$namespace} #entity_menu ul {
-	width: $general-width;
+	list-style: none;
 	margin: 0;
 	padding: 0;
+	display: block;
 }
 
 #{$namespace} #entity_menu li {
-	list-style-type: none;
+	display: inline-block;
+}
+
+#{$namespace} #entity_menu li a {
+	float: none;
+	clear: none;
 }
 
 /********************************************
-* Forms
+* Tables
 ********************************************/
 
 #{$namespace} table a, #{$namespace} table form {
@@ -123,7 +128,7 @@ html[xmlns] .clearfix {
   background-color: white;
 }
 
-// Make form buttons look like other links
+// Make table form buttons look like other links
 
 #{$namespace} table input {
     overflow:visible; /* Shrinkwrap the text in IE7- */
@@ -151,10 +156,15 @@ html[xmlns] .clearfix {
     border:0;
 }
 
-#{$namespace} input, #{$namespace} label {
+/***********************************
+* Forms
+***********************************/
+
+#{$namespace} input, #{$namespace} label, #{$namespace} select, #{$namespace} textarea {
 	float: left;
 	clear: both;
 }
+
 
 #{$namespace} form {
 	float: left;

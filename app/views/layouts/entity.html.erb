@@ -1,6 +1,6 @@
 <% content_for :content do %>
 	<%= content_for?(:content) ? yield(:content) : yield %>
-	<div id="entity_menu" class="job_probe">
+	<div id="entity_menu">
     <ul>
       <li><%= link_to "Main Menu", :controller => "home", :action => "index" %></li>
     </ul>

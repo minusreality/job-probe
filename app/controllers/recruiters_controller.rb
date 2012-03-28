@@ -47,7 +47,7 @@ class RecruitersController < ApplicationController
 
     respond_to do |format|
       if @recruiter.save
-        format.html { redirect_to(@recruiter, :notice => 'Recruiter was successfully created.') }
+        format.html { redirect_to recruiters_url, :notice => 'Recruiter was successfully created.' }
         format.xml  { render :xml => @recruiter, :status => :created, :location => @recruiter }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class RecruitersController < ApplicationController
 
     respond_to do |format|
       if @recruiter.update_attributes(params[:recruiter])
-        format.html { redirect_to(@recruiter, :notice => 'Recruiter was successfully updated.') }
+        format.html { redirect_to recruiters_url, :notice => 'Recruiter was successfully updated.' }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
