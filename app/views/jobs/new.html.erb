@@ -1,5 +1,5 @@
-<h2>New job</h2>
+<h2><%= link_to t('general.new') + ' ' + t('names.job') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', jobs_path %>
+<%= link_to t('general.back'), jobs_path %>

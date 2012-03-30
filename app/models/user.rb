@@ -10,8 +10,4 @@ class User < ActiveRecord::Base
   has_many :recruiters, :dependent => :destroy
   
   ROLES = %w[admin user]
-  
-  def admin?
-    false
-  end
 end

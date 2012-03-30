@@ -2,7 +2,7 @@
 	<%= content_for?(:content) ? yield(:content) : yield %>
 	<div id="entity_menu">
     <ul>
-      <li><%= link_to "Main Menu", :controller => "home", :action => "index" %></li>
+      <li><%= link_to t('general.mainmenu'), :controller => "home", :action => "index" %></li>
     </ul>
   </div>
 <% end %>

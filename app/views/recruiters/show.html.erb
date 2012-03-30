@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <strong><%= t('helpers.label.recruiter.name') %></strong>
   <%= @recruiter.name %>
 </p>
 
 <p>
-  <b>Resume submission date:</b>
+  <strong><%= t('helpers.label.recruiter.resume_submission_date') %></strong>
   <%= @recruiter.resume_submission_date %>
 </p>
 
 <p>
-  <b>Notes:</b>
+  <strong><%= t('helpers.label.recruiter.notes') %></strong>
   <%= @recruiter.notes %>
 </p>
 
 
-<%= link_to 'Edit', edit_recruiter_path(@recruiter) %> |
-<%= link_to 'Back', recruiters_path %>
+<%= link_to t('general.edit'), edit_recruiter_path(@recruiter) %> |
+<%= link_to t('general.back'), recruiters_path %>

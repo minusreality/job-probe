@@ -1,12 +1,12 @@
-<h2>Listing ads</h2>
+<h2><%= t('general.listing') + ' ' + t('names.ads') %></h2>
 
 <table class="table table-striped">
   <tr>
-    <th>Site name</th>
-    <th>Site url</th>
-    <th>Date posted</th>
-    <th>Last updated</th>
-    <th>Notes</th>
+    <th><%= t('helpers.label.ad.site_name') %></th>
+    <th><%= t('helpers.label.ad.site_url') %></th>
+    <th><%= t('helpers.label.ad.date_posted') %></th>
+    <th><%= t('helpers.label.ad.last_updated') %></th>
+    <th><%= t('helpers.label.ad.notes') %></th>
     <th></th>
     <th></th>
   </tr>
@@ -18,7 +18,7 @@
     <td><%= ad.date_posted %></td>
     <td><%= ad.last_updated %></td>
     <td><%= ad.notes %></td>
-    <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+    <td><%= link_to t('general.edit'), edit_ad_path(ad) %></td>
 		<td><%= button_to t('general.delete'), ad, :method => :delete, :confirm => t('question.confirm_delete') %></td>
   </tr>
 <% end %>
@@ -27,5 +27,5 @@
 <br />
 
 <div class="clearfix">
-	<%= link_to 'New Ad', new_ad_path %>
+	<%= link_to t('general.new') + ' ' + t('names.ad'), new_ad_path %>
 </div>

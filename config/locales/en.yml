@@ -2,7 +2,48 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+    helpers:
+        label:
+            ad:
+                site_name: 'Site Name'
+                site_url: 'Site URL'
+                date_posted: 'Date Posted'
+                last_updated: 'Last Updated'
+                notes: 'Notes'
+            job:
+                company_name: 'Company Name'
+                application_date: 'Application Date'
+                compensation: 'Compensation'
+                recruiter_id: 'Recruiter'
+                notes: 'Notes'
+            recruiter:
+                name: 'Name'
+                resume_submission_date: 'Resume Submission Date'
+                notes: 'Notes'
+        submit:
+            create: 'Create'
+            update: 'Update'
     general:
-        delete: "Delete"
+        application_title: 'Job Probe'
+        delete: 'Delete'
+        editing: 'Editing'
+        edit: 'Edit'
+        new: 'New'
+        back: 'Back'
+        logout: 'Logout'
+        login: 'Login'
+        signup: 'Sign Up'
+        mainmenu: 'Main Menu'
+    errors:
+        form_errors_occurred: 'The following errors prohibited this ad from being saved:'
+    names:
+        ad: 'Ad'
+        ads: 'Ads'
+        job: 'Job'
+        jobs: 'Jobs'
+        recruiter: 'Recruiter'
+        recruiters: 'Recruiters'
     question:
-        confirm_delete: "Are you sure?"
+        confirm_delete: 'Are you sure?'
+    admin:
+        welcome: 'Welcome to the Admin Section'

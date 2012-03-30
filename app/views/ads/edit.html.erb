@@ -1,5 +1,5 @@
-<h2>Editing ad</h2>
+<h2><%= t('general.editing') + ' ' + t('names.ad') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', ads_path %>
+<%= link_to t('general.back'), ads_path %>

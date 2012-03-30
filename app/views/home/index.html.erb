@@ -1,13 +1,13 @@
-<% title 'Job Probe' -%>
+<% title t('general.application_title') -%>
 
 	<ul class="nav nav-pills nav-stacked">
 <% if user_signed_in? || admin_signed_in? -%>
-		<li><%= link_to 'Jobs', jobs_path %></li>
-		<li><%= link_to 'Recruiters', recruiters_path %></li>
-		<li><%= link_to 'Ads', ads_path %></li>
-		<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+		<li><%= link_to t('names.jobs'), jobs_path %></li>
+		<li><%= link_to t('names.recruiters'), recruiters_path %></li>
+		<li><%= link_to t('names.ads'), ads_path %></li>
+		<li><%= link_to t('general.logout'), destroy_user_session_path, :method => :delete %></li>
 <% else -%>
-		<li><%= link_to 'Log in', new_user_session_path %></li>
-	  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+		<li><%= link_to t('general.login'), new_user_session_path %></li>
+	  <li><%= link_to t('general.signup'), new_user_registration_path %></li>
 <% end -%>
 	</ul>

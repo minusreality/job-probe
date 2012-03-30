@@ -1,5 +1,5 @@
-<h2>New recruiter</h2>
+<h2><%= link_to t('general.new') + ' ' + t('names.recruiter') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', recruiters_path %>
+<%= link_to t('general.back'), recruiters_path %>

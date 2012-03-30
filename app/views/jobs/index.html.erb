@@ -1,12 +1,12 @@
-<h2>Listing jobs</h2>
+<h2><%= t('general.listing') + ' ' + t('names.jobs') %></h2>
 
 <table class="table table-striped">
   <tr>
-    <th>Company name</th>
-    <th>Application date</th>
-    <th>Compensation</th>
-    <th>Recruiter</th>
-    <th>Notes</th>
+    <th><%= t('helpers.label.job.company_name') %></th>
+    <th><%= t('helpers.label.job.application_date') %></th>
+    <th><%= t('helpers.label.job.compensation') %></th>
+    <th><%= t('helpers.label.job.recruiter_id') %></th>
+    <th><%= t('helpers.label.job.notes') %></th>
     <th></th>
     <th></th>
   </tr>
@@ -19,7 +19,7 @@
     <td><%= job.recruiter.name unless job.recruiter.nil? %></td>
     <td><%= job.notes %></td>
 		<% if can? :update, job %>
-    	<td><%= link_to 'Edit', edit_job_path(job) %></td>
+    	<td><%= link_to t('general.edit'), edit_job_path(job) %></td>
 		<% end %>
 		<% if can? :destroy, job %>
 		<td><%= button_to t('general.delete'), job, :method => :delete, :confirm => t('question.confirm_delete') %></td>
@@ -33,6 +33,6 @@
 
 <% if can? :create, Job %>
 	<div class="clearfix">
-		<%= link_to 'New Job', new_job_path %>
+		<%= link_to t('general.new') + ' ' + t('names.job'), new_job_path %>
 	</div>
 <% end %>

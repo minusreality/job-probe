@@ -1,10 +1,10 @@
-<h2>Listing recruiters</h2>
+<h2><%= t('general.listing') + ' ' + t('names.recruiters') %></h2>
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
-    <th>Resume submission date</th>
-    <th>Notes</th>
+    <th><%= t('helpers.label.recruiter.name') %></th>
+    <th><%= t('helpers.label.recruiter.resume_submission_date') %></th>
+    <th><%= t('helpers.label.recruiter.notes') %></th>
     <th></th>
     <th></th>
   </tr>
@@ -14,7 +14,7 @@
     <td><%= recruiter.name %></td>
     <td><%= recruiter.resume_submission_date %></td>
     <td><%= recruiter.notes %></td>
-    <td><%= link_to 'Edit', edit_recruiter_path(recruiter) %></td>
+    <td><%= link_to t('general.edit'), edit_recruiter_path(recruiter) %></td>
 		<td><%= button_to t('general.delete'), recruiter, :method => :delete, :confirm => t('question.confirm_delete') %></td>
   </tr>
 <% end %>
@@ -23,5 +23,5 @@
 <br />
 
 <div class="clearfix">
-	<%= link_to 'New Recruiter', new_recruiter_path %>
+	<%= link_to t('general.new') + ' ' + t('names.recruiter'), new_recruiter_path %>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><%= h(yield(:title) || "Job Probe") %></title>
+		<title><%= h(yield(:title) || t('general.application_title')) %></title>
 		<%= csrf_meta_tag %>
 		<%= stylesheet_link_tag 'screen', :media => 'screen' %>
 		<%= javascript_include_tag 'application' %>
