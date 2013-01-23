@@ -1,15 +1,13 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  company_name: MyString
+job1:
+  company_name: The man
   application_date: 2012-03-25
-  compensation: MyText
-  recruiter_id: 1
-  notes: MyText
+  compensation: money
+  recruiter_id: recruiter1
+  notes: note
 
-two:
-  company_name: MyString
+job2:
+  company_name: The other man
   application_date: 2012-03-25
-  compensation: MyText
-  recruiter_id: 1
-  notes: MyText
+  compensation: bread and water
+  recruiter_id: recruiter2
+  notes: note

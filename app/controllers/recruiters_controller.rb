@@ -1,12 +1,11 @@
 class RecruitersController < ApplicationController
   before_filter :authenticate_any!
   layout 'entity'
+  load_and_authorize_resource
   
   # GET /recruiters
   # GET /recruiters.xml
   def index
-    @recruiters = Recruiter.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @recruiters }
@@ -16,8 +15,6 @@ class RecruitersController < ApplicationController
   # GET /recruiters/1
   # GET /recruiters/1.xml
   def show
-    @recruiter = Recruiter.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recruiter }
@@ -27,8 +24,6 @@ class RecruitersController < ApplicationController
   # GET /recruiters/new
   # GET /recruiters/new.xml
   def new
-    @recruiter = Recruiter.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @recruiter }
@@ -37,14 +32,13 @@ class RecruitersController < ApplicationController
 
   # GET /recruiters/1/edit
   def edit
-    @recruiter = Recruiter.find(params[:id])
   end
 
   # POST /recruiters
   # POST /recruiters.xml
   def create
-    @recruiter = Recruiter.new(params[:recruiter])
-
+    @job.user_id = current_user.id
+    
     respond_to do |format|
       if @recruiter.save
         format.html { redirect_to recruiters_url, :notice => 'Recruiter was successfully created.' }
@@ -59,8 +53,6 @@ class RecruitersController < ApplicationController
   # PUT /recruiters/1
   # PUT /recruiters/1.xml
   def update
-    @recruiter = Recruiter.find(params[:id])
-
     respond_to do |format|
       if @recruiter.update_attributes(params[:recruiter])
         format.html { redirect_to recruiters_url, :notice => 'Recruiter was successfully updated.' }
@@ -75,7 +67,6 @@ class RecruitersController < ApplicationController
   # DELETE /recruiters/1
   # DELETE /recruiters/1.xml
   def destroy
-    @recruiter = Recruiter.find(params[:id])
     @recruiter.destroy
 
     respond_to do |format|

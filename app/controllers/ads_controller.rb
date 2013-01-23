@@ -1,12 +1,11 @@
 class AdsController < ApplicationController
   before_filter :authenticate_any!
   layout 'entity'
+  load_and_authorize_resource
   
   # GET /ads
   # GET /ads.xml
   def index
-    @ads = Ad.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ads }
@@ -16,8 +15,6 @@ class AdsController < ApplicationController
   # GET /ads/1
   # GET /ads/1.xml
   def show
-    @ad = Ad.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @ad }
@@ -27,8 +24,6 @@ class AdsController < ApplicationController
   # GET /ads/new
   # GET /ads/new.xml
   def new
-    @ad = Ad.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @ad }
@@ -37,14 +32,13 @@ class AdsController < ApplicationController
 
   # GET /ads/1/edit
   def edit
-    @ad = Ad.find(params[:id])
   end
 
   # POST /ads
   # POST /ads.xml
   def create
-    @ad = Ad.new(params[:ad])
-
+    @job.user_id = current_user.id
+    
     respond_to do |format|
       if @ad.save
         format.html { redirect_to ads_url, :notice => 'Ad was successfully created.' }
@@ -59,8 +53,6 @@ class AdsController < ApplicationController
   # PUT /ads/1
   # PUT /ads/1.xml
   def update
-    @ad = Ad.find(params[:id])
-
     respond_to do |format|
       if @ad.update_attributes(params[:ad])
         format.html { redirect_to ads_url, :notice => 'Ad was successfully updated.' }
@@ -75,7 +67,6 @@ class AdsController < ApplicationController
   # DELETE /ads/1
   # DELETE /ads/1.xml
   def destroy
-    @ad = Ad.find(params[:id])
     @ad.destroy
 
     respond_to do |format|

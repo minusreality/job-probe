@@ -2,7 +2,9 @@ require 'test_helper'
 
 class JobsControllerTest < ActionController::TestCase
   setup do
-    @job = jobs(:one)
+    @job = jobs(:job1)
+    @user = users(:john)
+    sign_in :user, @user
   end
 
   test "should get index" do
@@ -21,7 +23,7 @@ class JobsControllerTest < ActionController::TestCase
       post :create, :job => @job.attributes
     end
 
-    assert_redirected_to job_path(assigns(:job))
+    assert_redirected_to jobs_path
   end
 
   test "should show job" do
@@ -31,12 +33,12 @@ class JobsControllerTest < ActionController::TestCase
 
   test "should get edit" do
     get :edit, :id => @job.to_param
-    assert_response :success
+    assert_redirected_to jobs_path
   end
 
   test "should update job" do
-    put :update, :id => @job.to_param, :job => @job.attributes
-    assert_redirected_to job_path(assigns(:job))
+    put :update, :id => @job.to_param, :job => @job.attributes #{:company_name => 'new name'}
+    assert_redirected_to jobs_path
   end
 
   test "should destroy job" do

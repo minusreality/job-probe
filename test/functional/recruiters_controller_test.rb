@@ -2,7 +2,9 @@ require 'test_helper'
 
 class RecruitersControllerTest < ActionController::TestCase
   setup do
-    @recruiter = recruiters(:one)
+    @recruiter = recruiters(:recruiter1)
+    @user = users(:john)
+    sign_in :user, @user
   end
 
   test "should get index" do
@@ -21,7 +23,7 @@ class RecruitersControllerTest < ActionController::TestCase
       post :create, :recruiter => @recruiter.attributes
     end
 
-    assert_redirected_to recruiter_path(assigns(:recruiter))
+    assert_redirected_to recruiters_path
   end
 
   test "should show recruiter" do
@@ -36,7 +38,7 @@ class RecruitersControllerTest < ActionController::TestCase
 
   test "should update recruiter" do
     put :update, :id => @recruiter.to_param, :recruiter => @recruiter.attributes
-    assert_redirected_to recruiter_path(assigns(:recruiter))
+    assert_redirected_to recruiters_path
   end
 
   test "should destroy recruiter" do

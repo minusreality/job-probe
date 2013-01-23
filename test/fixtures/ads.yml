@@ -1,15 +1,13 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  site_name: MyString
-  site_url: MyString
+ad1:
+  site_name: 'Minus Reality'
+  site_url: 'http://www.minus-reality.com'
   date_posted: 2012-03-25 17:21:38
   last_updated: 2012-03-25 17:21:38
-  notes: MyText
+  notes: 'some notes'
 
-two:
-  site_name: MyString
-  site_url: MyString
+ad2:
+  site_name: 'Dont Even Reply'
+  site_url: 'http://wwww.dontevenreply.com'
   date_posted: 2012-03-25 17:21:38
   last_updated: 2012-03-25 17:21:38
-  notes: MyText
+  notes: 'some other notes'

@@ -1,8 +1,7 @@
 class JobsController < ApplicationController
   before_filter :authenticate_any!
-  load_and_authorize_resource
-  
   layout 'entity'
+  load_and_authorize_resource
   
   # GET /jobs
   # GET /jobs.xml
@@ -17,8 +16,6 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.xml
   def show
-    #@job = Job.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @job }
@@ -28,8 +25,6 @@ class JobsController < ApplicationController
   # GET /jobs/new
   # GET /jobs/new.xml
   def new
-    #@job = Job.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @job }
@@ -38,14 +33,13 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
-    #@job = Job.find(params[:id])
+
   end
 
   # POST /jobs
   # POST /jobs.xml
   def create
-    #@job = Job.new(params[:job])
-    @job.user_id = current_user
+    @job.user_id = current_user.id
     
     respond_to do |format|
       if @job.save
@@ -61,8 +55,6 @@ class JobsController < ApplicationController
   # PUT /jobs/1
   # PUT /jobs/1.xml
   def update
-    #@job = Job.find(params[:id])
-
     respond_to do |format|
       if @job.update_attributes(params[:job])
         format.html { redirect_to jobs_url, :notice => 'Job was successfully updated.' }

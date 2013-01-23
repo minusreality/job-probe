@@ -1,11 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  name: MyString
+recruiter1:
+  name: Lisa
   resume_submission_date: 2012-03-25
-  notes: MyText
+  notes: recruiting
 
-two:
-  name: MyString
+recruiter2:
+  name: Rhiannon
   resume_submission_date: 2012-03-25
-  notes: MyText
+  notes: recruiting

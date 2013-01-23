@@ -2,7 +2,9 @@ require 'test_helper'
 
 class AdsControllerTest < ActionController::TestCase
   setup do
-    @ad = ads(:one)
+    @ad = ads(:ad1)
+    @user = users(:john)
+    sign_in users(:john)#:user, @user
   end
 
   test "should get index" do
@@ -21,7 +23,7 @@ class AdsControllerTest < ActionController::TestCase
       post :create, :ad => @ad.attributes
     end
 
-    assert_redirected_to ad_path(assigns(:ad))
+    assert_redirected_to ads_path
   end
 
   test "should show ad" do
@@ -36,7 +38,7 @@ class AdsControllerTest < ActionController::TestCase
 
   test "should update ad" do
     put :update, :id => @ad.to_param, :ad => @ad.attributes
-    assert_redirected_to ad_path(assigns(:ad))
+    assert_redirected_to ads_path
   end
 
   test "should destroy ad" do

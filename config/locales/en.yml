@@ -35,7 +35,7 @@ en:
         signup: 'Sign Up'
         mainmenu: 'Main Menu'
     errors:
-        form_errors_occurred: 'The following errors prohibited this ad from being saved:'
+        form_errors_occurred: 'The following errors prohibited your changes from being saved:'
     names:
         ad: 'Ad'
         ads: 'Ads'
